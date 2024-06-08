@@ -27,9 +27,8 @@ public class Display extends JPanel {
         this.setFocusable(true);
 
     }
-
+    
     public void run() {
-
         
     }
     

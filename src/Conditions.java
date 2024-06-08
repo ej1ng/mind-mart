@@ -4,6 +4,7 @@ import java.io.*;
 public class Conditions {
     private int index;
     private String scenario;
+
     // creates objects for all condition files
     File adhd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/adhd.txt");
     File anxiety = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/anxiety.txt");
@@ -13,8 +14,8 @@ public class Conditions {
     File did = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/did.txt");
     File ed = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ed.txt");
     File ptsd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ptsd.txt");
-
-    File[] conditionList = {adhd, anxiety, autism, bpd, depression, did, ed, ptsd}; // array of condition files
+    
+    private File[] conditionList = {adhd, anxiety, autism, bpd, depression, did, ed, ptsd}; // array of condition files
     /**
      * constructor: generates a random number within the length of the conditionList array
      * pre: none

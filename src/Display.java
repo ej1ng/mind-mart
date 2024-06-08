@@ -32,8 +32,7 @@ public class Display extends JPanel {
 
         
     }
-
-
+    
     public void changeDisplay(Graphics g) {
         super.paintComponent(g); 
 

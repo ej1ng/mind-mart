@@ -24,7 +24,7 @@ class Main {
         JLabel bgDisplay = new JLabel("",new ImageIcon(bg),JLabel.CENTER);
         bgDisplay.setSize(display.width,display.height);
         bgDisplay.setBounds(0,0,display.width,display.height);
-
+        
         frame.add(bgDisplay);
 
         frame.setLocationRelativeTo(null);

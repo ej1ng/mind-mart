@@ -1,8 +1,6 @@
 /**
  * mind-mart: a mental health education game
  */
-import java.util.Scanner;
-import java.util.Random;
 
 class Main {
     public static void main (String[] args) {

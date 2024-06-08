@@ -7,6 +7,12 @@ public class Display extends JPanel {
     final int width =  1920;
     final int height = 1080;
 
+
+    public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
+    public final int intro = 1;
+    public final int game = 2;
+
+
     public Display() {
         this.setPreferredSize(new Dimension(width, height));
         this.setBackground(Color.white);
@@ -16,6 +22,11 @@ public class Display extends JPanel {
 
     }
 
+    public void run() {
+        
+    }
+
+
     public void changeDisplay(Graphics g) {
         super.paintComponent(g); 
 
@@ -23,6 +34,12 @@ public class Display extends JPanel {
 
 
     }
+
+    public void showBeginningSlides() {
+
+
+    }
+
 
     
 }

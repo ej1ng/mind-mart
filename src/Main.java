@@ -15,6 +15,7 @@ class Main {
 
         Display display = new Display();
         frame.add(display);
+        frame.pack();
 
         frame.setSize(display.width,display.height);
         frame.setLayout(null);
@@ -28,6 +29,8 @@ class Main {
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+
 
 
 

@@ -2,21 +2,25 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class Display extends JPanel {
 
-    final int width =  1920;
-    final int height = 1080;
+public class Display extends JPanel implements Runnable{
 
+    final int width =  1440;
+    final int height = 810;
 
-    public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
+    private int currentIntroSlide = 1;
+
+    final int FPS = 60; 
     public final int intro = 1;
     public final int game = 2;
+    public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
 
-    Image img = new Image();
-    Text txt = new Text(this);
+
+
+
     Conditions conditions = new Conditions();
     KeyResponse keyResp = new KeyResponse(this);
-    Graphics2D g2;
+    Thread gameThread;
 
 
     public Display() {
@@ -25,29 +29,56 @@ public class Display extends JPanel {
         this.setOpaque(false);
         this.setDoubleBuffered(true);
         this.setFocusable(true);
-
     }
+
+    public void startGameThread() {
+        gameThread = new Thread(this);
+        gameThread.start();
+    }
+
 
     public void run() {
+        double drawInterval = 1000000000/FPS;
+        double delta = 0;
+        long lastTime = System.nanoTime();
+        long currentTime;
 
-        
+        while (gameThread != null) {
+
+            currentTime = System.nanoTime();
+            delta += (currentTime-lastTime)/drawInterval;
+
+            lastTime = currentTime;
+
+            if (delta >= 1) {
+                update();
+                repaint();
+                delta -= 1;
+            }
+        }
+
     }
 
+    public void update() {
 
-    public void changeDisplay(Graphics g) {
+    }
+
+    public void paintComponent(Graphics g) {
         super.paintComponent(g); 
 
-        g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D)g;
+
+
+        g2.dispose(); 
+
 
     }
+
 
     public void showBeginningSlides() {
+        
 
     }
 
-    public void showScenario(String imagePath) {
-        // img.displayImage(g2,img.getImage(imagePath), 1,2,200,200); 
-        txt.displayText(g2,1,2,20,conditions.getScenario());
-    }
 
 }

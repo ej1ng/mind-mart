@@ -4,7 +4,7 @@ public class KeyResponse implements KeyListener{
 
     Display display;
     public boolean displayed;
-    public int pressedKey;
+    public Integer pressedKey;
     public boolean checkedOut;
     public boolean nextPressed;
     public int checkoutItem;
@@ -13,6 +13,7 @@ public class KeyResponse implements KeyListener{
     public KeyResponse(Display display) {
         this.display = display;
         displayed = false;
+        pressedKey = null;
     }
 
     public void keyTyped(KeyEvent e) {
@@ -217,6 +218,9 @@ public class KeyResponse implements KeyListener{
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_ENTER) {
             nextPressed = false;
+        }
+        if (code == KeyEvent.VK_P) {
+            checkedOut = false;
         }
 
     }

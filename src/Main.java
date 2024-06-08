@@ -11,7 +11,7 @@ class Main {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setTitle("Mind Mart");
+        frame.setTitle("Mind-Mart");
 
         Display display = new Display();
         frame.add(display);

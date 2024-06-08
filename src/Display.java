@@ -12,7 +12,8 @@ public class Display extends JPanel implements Runnable{
 
     final int FPS = 60; 
     public final int intro = 1;
-    public final int game = 2;
+    public final int shop = 2;
+    public final int guess = 3;
     public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
 
 
@@ -39,8 +40,12 @@ public class Display extends JPanel implements Runnable{
     public void run() {
         
     }
+
+    public void update() {
+        
+    }
     
-    public void changeDisplay(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g); 
 
         Graphics2D g2 = (Graphics2D)g;
@@ -52,10 +57,7 @@ public class Display extends JPanel implements Runnable{
     }
 
 
-    public void showBeginningSlides() {
-        
 
-    }
 
 
 }

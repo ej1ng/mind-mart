@@ -27,7 +27,7 @@ public class Display extends JPanel {
         this.setFocusable(true);
 
     }
-    // EMILYS TESTER METHOD
+    
     public void run() {
         
     }

@@ -14,7 +14,7 @@ public class Conditions {
     File did = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/did.txt");
     File ed = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ed.txt");
     File ptsd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ptsd.txt");
-
+    
     private File[] conditionList = {adhd, anxiety, autism, bpd, depression, did, ed, ptsd}; // array of condition files
     /**
      * constructor: generates a random number within the length of the conditionList array

@@ -3,18 +3,21 @@ import java.util.ArrayList;
 
 public class Items {
     private int currency;
-    private String description;
-    Display display;
+    private int price;
     KeyResponse keyResp;
     ArrayList<String> descriptionList = new ArrayList<>(); // arraylist of lines from text fi
+    private String description;
+    private int correctPurchases;
     /**
      * constructor
      * pre: none
      * post: sets currency to 0
      */
-    public Items(int currency, KeyResponse keyResp) {
+    public Items(int currency, KeyResponse keyResp, int price, int correctPurchases) {
         this.currency = currency;
         this.keyResp = keyResp;
+        this.price = price; // price of item
+        this.correctPurchases = correctPurchases;
     }
 
     public String getDescription() {

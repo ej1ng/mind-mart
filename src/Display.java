@@ -21,12 +21,8 @@ public class Display extends JPanel {
 
         Graphics2D g2 = (Graphics2D)g;
 
-        
 
     }
 
-    public void update() {
-
-    }
     
 }

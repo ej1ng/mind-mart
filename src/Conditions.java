@@ -15,12 +15,11 @@ public class Conditions {
     File ptsd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ptsd.txt");
 
     File[] conditionList = {adhd, anxiety, autism, bpd, depression, did, ed, ptsd}; // array of condition files
-
-   /**
-    * constructor: generates a random number within the length of the conditionList array
-    * pre: none
-    * post: random number generated
-    */
+    /**
+     * constructor: generates a random number within the length of the conditionList array
+     * pre: none
+     * post: random number generated
+     */
     public Conditions() {
         Random random = new Random();
         index = random.nextInt(conditionList.length);

@@ -5,8 +5,10 @@ public class KeyResponse implements KeyListener{
     Display display;
     public boolean displayed;
     public int pressedKey;
-    public boolean backPressed;
+    public boolean checkedOut;
     public boolean nextPressed;
+    public int checkoutItem;
+
 
     public KeyResponse(Display display) {
         this.display = display;
@@ -187,13 +189,13 @@ public class KeyResponse implements KeyListener{
             } else {
                 displayed = false;
             }
-
-        }
-        if (code == KeyEvent.VK_B) {
-            backPressed = true;
         }
         if (code == KeyEvent.VK_ENTER) {
             nextPressed = true;
+        }
+        if (code == KeyEvent.VK_P) {
+            checkoutItem = pressedKey;
+            checkedOut = true;
         }
 
     }
@@ -201,13 +203,21 @@ public class KeyResponse implements KeyListener{
     public int getPressedKey() {
         return pressedKey;
     }
+
+    public int getCheckoutItem() {
+        if (checkedOut = true) {
+            checkedOut = false;
+            return checkoutItem;
+        }
+        return 0;
+    }
+
+
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
-        if (code == KeyEvent.VK_B) {
-            backPressed = false;
-        }
         if (code == KeyEvent.VK_ENTER) {
             nextPressed = false;
         }
+
     }
 }

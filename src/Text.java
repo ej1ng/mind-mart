@@ -11,7 +11,7 @@ public class Text {
 
     }
 
-    public void displayText(Graphics2D g2, int x, int y, int size, String text) {
+    public void displayScenarioText(Graphics2D g2, int x, int y, int size, String text) {
         this.g2 = g2; 
         font = new Font("Arial",Font.PLAIN,size);
 

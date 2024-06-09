@@ -19,8 +19,9 @@ public class Story extends Image{
         if (slideNum < 9) {
             if (keyResp.nextPressed == true) {
                 slideNum +=1;
+                slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
             }
-            slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
+
         } else {
             display.gameState = display.shop;
         }

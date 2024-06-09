@@ -24,6 +24,7 @@ public class KeyResponse implements KeyListener{
         int code = e.getKeyCode();
 
         if (display.gameState == display.intro) {
+
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = true;
 

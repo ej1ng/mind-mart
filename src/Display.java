@@ -29,6 +29,7 @@ public class Display extends JPanel implements Runnable{
         this.setOpaque(false);
         this.setDoubleBuffered(true);
         this.setFocusable(true);
+        this.addKeyListener(keyResp);
     }
 
     public void startGameThread() {

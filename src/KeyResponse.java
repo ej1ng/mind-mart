@@ -211,9 +211,6 @@ public class KeyResponse implements KeyListener{
         }
     }
 
-    public int getPressedKey() {
-        return pressedKey;
-    }
 
     public int getCheckoutItem() {
         if (checkedOut = true) {

@@ -75,7 +75,6 @@ public class Display extends JPanel implements Runnable{
             story.update();
         }
         if (gameState == shop) {
-
             item.update();
         }
         if (gameState == guess) {
@@ -95,10 +94,8 @@ public class Display extends JPanel implements Runnable{
         if (gameState == shop) {
             conditions.showBg(g2);
             conditions.showScenario(g2);
-            
-            if (keyResp.displayed == true) {
-                item.show(g2);
-            }
+
+            item.show(g2);
         }
         g2.dispose(); 
     }

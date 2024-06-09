@@ -18,15 +18,15 @@ public class Items extends Image {
 
     public void update() {
         if (keyResp.displayed == true) {
-            item = getImage("resources/items/item" + keyResp.getPressedKey() + ".png");
+            item = getImage("resources/items/item" + keyResp.pressedKey + ".png");
         }
     }
 
     public void show(Graphics2D g2) {
         BufferedImage img = item;
-
-        if (keyResp.displayed == true) {
+        if (keyResp.displayed == false) {
             g2.drawImage(img,0,0,display.width,display.height,null);
         }
+
     }
 }

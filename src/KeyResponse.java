@@ -32,16 +32,17 @@ public class KeyResponse implements KeyListener{
         }
         if (display.gameState == display.shop) {
             if (code == KeyEvent.VK_1) {
-                if (displayed = false) {
-                    System.out.println("On");
+                if (displayed == false) {
+                    System.out.println(displayed);
                     displayed = true;
                     pressedKey = 0;
+                    System.out.println(displayed);
                 } else {
                     displayed = false;
                 }
             } 
             if (code == KeyEvent.VK_2) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 1;
                 } else {
@@ -49,7 +50,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_3) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 2;
                 } else {
@@ -57,7 +58,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_4) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 3;
                 } else {
@@ -65,7 +66,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_5) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 4;
                 } else {
@@ -73,7 +74,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_6) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 5;
                 } else {
@@ -81,7 +82,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_7) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 6;
                 } else {
@@ -89,7 +90,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_8) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 7;
                 } else {
@@ -97,7 +98,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_9) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 8;
                 } else {
@@ -105,7 +106,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_0) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 9;
                 } else {
@@ -113,7 +114,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_Q) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 10;
                 } else {
@@ -121,7 +122,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_W) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 11;
                 } else {
@@ -129,7 +130,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_E) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 12;
                 } else {
@@ -137,7 +138,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_R) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 13;
                 } else {
@@ -145,7 +146,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_T) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 14;
                 } else {
@@ -153,7 +154,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_Y) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 15;
                 } else {
@@ -161,7 +162,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_A) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 16;
                 } else {
@@ -169,7 +170,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_S) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 17;
                 } else {
@@ -177,7 +178,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_D) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 18;
                 } else {
@@ -185,7 +186,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_F) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 19;
                 } else {
@@ -193,7 +194,7 @@ public class KeyResponse implements KeyListener{
                 }
             }
             if (code == KeyEvent.VK_G) {
-                if (displayed = false) {
+                if (displayed == false) {
                     displayed = true;
                     pressedKey = 20;
                 } else {

@@ -1,7 +1,5 @@
 import java.io.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class Tokens extends Image {
     private int currency;
@@ -51,12 +49,9 @@ public class Tokens extends Image {
      * update method
      */
     public void update() {
-        System.out.println(currency); // before purchase for debug
-        // purchasing
+        // before purchase
         checkout(currency, price);
-        setCurrency(currency);
-
-        System.out.println(currency); // after purchase for debug
+        setCurrency(currency); // after purchase
     }
     /**
      * update and display the currency

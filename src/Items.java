@@ -1,4 +1,3 @@
-import java.io.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -24,7 +23,7 @@ public class Items extends Image {
 
     public void show(Graphics2D g2) {
         BufferedImage img = item;
-        if (keyResp.displayed == false) {
+        if (keyResp.displayed == true) {
             g2.drawImage(img,0,0,display.width,display.height,null);
         }
 

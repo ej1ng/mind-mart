@@ -16,7 +16,6 @@ public class Display extends JPanel implements Runnable{
 
 
     // variable for the currency class
-    // variable for the currency class
     private int currency = 100; // intialize currency
     private int price = 20; // initialize item price
     private int correctPurchases = 0;
@@ -26,7 +25,7 @@ public class Display extends JPanel implements Runnable{
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
 
-    // create objects for game
+
 
     // create objects for game
     Story story = new Story(this, keyResp);
@@ -76,7 +75,6 @@ public class Display extends JPanel implements Runnable{
         }
         if (gameState == shop) {
 
-            item.update();
             item.update();
         }
         if (gameState == guess) {

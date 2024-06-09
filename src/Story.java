@@ -16,7 +16,7 @@ public class Story extends Image {
     } 
 
     public void update() {
-        if (slideNum < 10) {
+        if (slideNum < 9) {
             if (keyResp.nextPressed == true) {
                 keyResp.nextPressed = false;
                 slideNum += 1;

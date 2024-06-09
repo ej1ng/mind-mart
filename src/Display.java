@@ -15,6 +15,7 @@ public class Display extends JPanel implements Runnable{
     public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
 
 
+
     // variable for the currency class
     private int currency = 100; // intialize currency
     private int price = 20; // initialize item price
@@ -99,9 +100,7 @@ public class Display extends JPanel implements Runnable{
                 item.show(g2);
             }
 
-            if (keyResp.displayed == true) {
-                item.show(g2);
-            }
+
 
         }
 

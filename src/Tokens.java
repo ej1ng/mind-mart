@@ -74,6 +74,18 @@ public class Tokens extends Image {
         g2.setFont(font);
         g2.setColor(c);
         g2.drawString(String.valueOf(currency),x,y);
+        
+        if (currency == 0) {
+            g2.drawString("Press enter to guess the disorder",1030,750);
+            
+            
+            
+            
+            
+            
+            
+        
+        }
     }
 
 }

@@ -1,17 +1,22 @@
 import java.io.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
-public class Currency {
+public class Tokens extends Image {
     private int currency;
     private int price;
     KeyResponse keyResp;
     private int correctPurchases;
     Display display;
+    private Font font = new Font("Arial",Font.PLAIN,20);
+
     /**
      * constructor
      * pre: none
      * post: sets variables
      */
-    public Currency(int currency, KeyResponse keyResp, int price, int correctPurchases, Display display) {
+    public Tokens(int currency, KeyResponse keyResp, int price, int correctPurchases, Display display) {
         this.currency = currency;
         this.keyResp = keyResp;
         this.display = display;
@@ -52,5 +57,16 @@ public class Currency {
         setCurrency(currency);
 
         System.out.println(currency); // after purchase for debug
+    }
+    /**
+     * update and display the currency
+     */
+    public void showScenario(Graphics2D g2) { 
+        int x = 570;
+        int y = 585; 
+        Color c = new Color(139,69,19);
+        g2.setFont(font);
+        g2.setColor(c);
+
     }
 }

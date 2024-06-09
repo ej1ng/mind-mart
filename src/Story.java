@@ -21,7 +21,6 @@ public class Story extends Image {
                 keyResp.nextPressed = false;
                 slideNum += 1;
                 slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
-                System.out.println(slideNum);
             }
         } else if (slideNum == 9) {
             slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");

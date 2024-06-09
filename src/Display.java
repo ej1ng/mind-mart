@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.util.Currency;
+
 import javax.swing.*;
 
 
@@ -17,20 +19,19 @@ public class Display extends JPanel implements Runnable{
 
 
     // variable for the currency class
-    private int currency = 100; // intialize currency
+    private int total = 100; // intialize currency
     private int price = 20; // initialize item price
     private int correctPurchases = 0;
-
-
-    Conditions conditions = new Conditions(this);
+    
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
 
-
-
     // create objects for game
     Story story = new Story(this, keyResp);
+    Conditions conditions = new Conditions(this);
     Items item = new Items(this, keyResp);
+    Tokens currency = new Tokens (total, keyResp, price, correctPurchases, this);
+
 
     public Display() {
         this.setPreferredSize(new Dimension(width, height));
@@ -76,6 +77,7 @@ public class Display extends JPanel implements Runnable{
         }
         if (gameState == shop) {
             item.update();
+            currency.update();
         }
         if (gameState == guess) {
             

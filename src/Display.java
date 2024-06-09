@@ -24,7 +24,6 @@ public class Display extends JPanel implements Runnable{
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
     Story story = new Story(this, keyResp);
-    Text txt = new Text();
 
 
     public Display() {
@@ -70,7 +69,7 @@ public class Display extends JPanel implements Runnable{
             story.update();
         }
         if (gameState == shop) {
-            
+
         }
         if (gameState == guess) {
 

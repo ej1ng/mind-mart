@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Conditions extends Image {
     private int index;
     private String scenario;
-    private Font font = new Font("Arial",Font.PLAIN,25);
+    private Font font = new Font("Arial",Font.PLAIN,20);
     BufferedImage template;
     Display display;
 
@@ -29,13 +29,13 @@ public class Conditions extends Image {
      */
     public Conditions(Display display) {
         this.display = display;
-        Random random = new Random();
-        index = random.nextInt(conditionList.length);
     }
     /**
      * generates scenario description
      */
     public String getScenario() {
+        Random random = new Random();
+        index = random.nextInt(conditionList.length);
         StringBuffer fileContent = new StringBuffer(); // initialize a stringbuffer to hold the file content
         try {
             FileReader stream = new FileReader(conditionList[index]); // creates file stream
@@ -74,8 +74,8 @@ public class Conditions extends Image {
 
     public ArrayList<String> getLineArray() {
         char character;
-        String line = null;
-        ArrayList<String> totalScenario = new ArrayList();
+        String line = "";
+        ArrayList<String> totalScenario = new ArrayList<String>();
         boolean letter = false;
 
         for (int i = 0; i < randScenario.length();i++) {
@@ -98,14 +98,13 @@ public class Conditions extends Image {
 
     public void showScenario(Graphics2D g2) { 
         int x = 570;
-        int y = 600; 
+        int y = 590; 
         Color c = new Color(139,69,19);
         g2.setFont(font);
         g2.setColor(c);
         for (String line : getLineArray()) {
             g2.drawString(line,x,y);
             y += 30;
-            System.out.println(line);
         }
 
     }

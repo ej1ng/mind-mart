@@ -20,7 +20,7 @@ class Main {
         frame.setSize(display.width,display.height);
         frame.setLayout(null);
 
-        URL bg = Main.class.getResource("/resources/background/placeholderbg.png");
+        URL bg = Main.class.getResource("/resources/background/placeholderbggi.png");
         JLabel bgDisplay = new JLabel("",new ImageIcon(bg),JLabel.CENTER);
         bgDisplay.setSize(display.width,display.height);
         bgDisplay.setBounds(0,0,display.width,display.height);

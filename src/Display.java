@@ -20,10 +20,11 @@ public class Display extends JPanel implements Runnable{
     private int correctPurchases = 0;
 
 
-    Conditions conditions = new Conditions();
+    Conditions conditions = new Conditions(this);
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
     Story story = new Story(this, keyResp);
+    Text txt = new Text();
 
 
     public Display() {
@@ -46,6 +47,8 @@ public class Display extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         long currentTime;
 
+
+
         while (gameThread != null) {
             currentTime = System.nanoTime();
             delta += (currentTime-lastTime)/drawInterval;
@@ -67,8 +70,7 @@ public class Display extends JPanel implements Runnable{
             story.update();
         }
         if (gameState == shop) {
-
-
+            
         }
         if (gameState == guess) {
 
@@ -84,6 +86,8 @@ public class Display extends JPanel implements Runnable{
             story.show(g2);
         }
         if (gameState == shop) {
+            conditions.showBg(g2);
+            conditions.showScenario(g2);
             
         }
 

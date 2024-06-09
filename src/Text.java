@@ -3,19 +3,15 @@ import java.awt.*;
 public class Text {
     
     Display display;
-    Graphics2D g2;
     Font font;
     
-    public Text(Display display) {
-        this.display = display;
-
-    }
-
     public void displayText(Graphics2D g2, int x, int y, int size, String text) {
-        this.g2 = g2; 
-        font = new Font("Arial",Font.PLAIN,size);
+        font = new Font("Comfortaa",Font.PLAIN,40);
+        
 
         for (String line : text.split("\n")) {
+            g2.setFont(font);
+            g2.setColor(Color.red);
             g2.drawString(line,x,y);
             y += 30;
         }

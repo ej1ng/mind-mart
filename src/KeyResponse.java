@@ -4,7 +4,7 @@ public class KeyResponse implements KeyListener{
 
     Display display;
     public boolean displayed;
-    public Integer pressedKey;
+    public int pressedKey;
     public boolean checkedOut;
     public boolean nextPressed;
     public int checkoutItem;
@@ -13,7 +13,6 @@ public class KeyResponse implements KeyListener{
     public KeyResponse(Display display) {
         this.display = display;
         displayed = false;
-        pressedKey = null;
     }
 
     public void keyTyped(KeyEvent e) {
@@ -233,9 +232,13 @@ public class KeyResponse implements KeyListener{
             }
         }
 
-        if (code == KeyEvent.VK_P) {
-            checkedOut = false;
+
+        if (display.gameState == display.shop) {
+            if (code == KeyEvent.VK_P) {
+                checkedOut = false;
+            }
         }
+
 
     }
 }

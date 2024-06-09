@@ -8,6 +8,7 @@ public class KeyResponse implements KeyListener{
     public boolean checkedOut;
     public boolean nextPressed;
     public int checkoutItem;
+    public int guess = 0;
 
 
     public KeyResponse(Display display) {
@@ -201,24 +202,53 @@ public class KeyResponse implements KeyListener{
                     displayed = false;
                 }
             }
+
             if (code == KeyEvent.VK_P) {
                 checkoutItem = pressedKey;
                 checkedOut = true;
             }
+            if (code == KeyEvent.VK_ENTER) {
+                nextPressed = true;
+            }
         } 
 
         if (display.gameState == display.guess) {
+            if (code == KeyEvent.VK_1) {
+                guess = 1;
+            }
+            if (code == KeyEvent.VK_2) {
+                guess = 2;
+            }
+            if (code == KeyEvent.VK_3) {
+                guess = 3;
+            }
+            if (code == KeyEvent.VK_4) {
+                guess = 4;
+            }
+            if (code == KeyEvent.VK_5) {
+                guess = 5;
+            }
+            if (code == KeyEvent.VK_6) {
+                guess = 6;
+            }
+            if (code == KeyEvent.VK_7) {
+                guess = 7;
+            }
+            if (code == KeyEvent.VK_8) {
+                guess = 8;
+            }
+            
 
         }
     }
 
 
     public int getCheckoutItem() {
-        if (checkedOut = true) {
+        if (checkedOut == true) {
             checkedOut = false;
             return checkoutItem;
         }
-        return 0;
+        return -1;
     }
 
 
@@ -229,6 +259,9 @@ public class KeyResponse implements KeyListener{
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = false;
             }
+            if (code == KeyEvent.VK_ENTER) {
+                nextPressed = false;
+            }
         }
 
 
@@ -236,6 +269,7 @@ public class KeyResponse implements KeyListener{
             if (code == KeyEvent.VK_P) {
                 checkedOut = false;
             }
+
         }
 
 

@@ -1,4 +1,4 @@
-import java.io.*;
+
 import java.awt.*;
 
 public class Tokens extends Image {
@@ -50,9 +50,17 @@ public class Tokens extends Image {
      * update method
      */
     public void update() {
-        if (keyResp.checkedOut == true && currency > 0) {
-            keyResp.checkedOut = false;
-            checkout(currency,price);
+        if (currency > 0) {
+            if (keyResp.checkedOut == true) {
+                keyResp.checkedOut = false;
+                checkout(currency,price);
+            }
+        } else if (currency == 0) {
+            if (keyResp.nextPressed == true) {
+                keyResp.nextPressed = false;
+                display.gameState = display.guess;
+
+            }
         }
     }
 

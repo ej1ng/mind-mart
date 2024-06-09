@@ -14,12 +14,6 @@ public class Display extends JPanel implements Runnable{
     public int guess = 3;
     public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
 
-
-
-    // variable for the currency class
-    private int total = 100; // intialize currency
-    private int price = 20; // initialize item price
-    private int correctPurchases = 0;
     
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
@@ -29,6 +23,7 @@ public class Display extends JPanel implements Runnable{
     Conditions conditions = new Conditions(this);
     Items item = new Items(this, keyResp);
     Tokens currency = new Tokens (this,keyResp);
+    Guessing guessing = new Guessing(this,keyResp,conditions);
 
 
     public Display() {
@@ -50,8 +45,6 @@ public class Display extends JPanel implements Runnable{
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
-
-
 
         while (gameThread != null) {
             currentTime = System.nanoTime();
@@ -78,6 +71,7 @@ public class Display extends JPanel implements Runnable{
             currency.update();
         }
         if (gameState == guess) {
+            guessing.update();
             
             
         }
@@ -98,6 +92,12 @@ public class Display extends JPanel implements Runnable{
             item.show(g2);
 
         }
+        if (gameState == guess) {
+            guessing.show(g2);
+            guessing.write(g2);
+
+        }
         g2.dispose(); 
+
     }
 }

@@ -30,12 +30,13 @@ public class Conditions extends Image {
     public Conditions(Display display) {
         this.display = display;
     }
+
+    
     /**
      * generates scenario description
      */
     public String getScenario() {
-        Random random = new Random();
-        index = random.nextInt(conditionList.length);
+        setIndex();
         StringBuffer fileContent = new StringBuffer(); // initialize a stringbuffer to hold the file content
         try {
             FileReader stream = new FileReader(conditionList[index]); // creates file stream
@@ -54,6 +55,11 @@ public class Conditions extends Image {
         return scenario;
     }
 
+    public void setIndex(){
+        Random random = new Random();
+        index = random.nextInt(conditionList.length-1);
+    }
+
     /**
      * returns the index value
      * pre: none
@@ -61,6 +67,7 @@ public class Conditions extends Image {
      * @return index
      */
     public int getIndex() {
+
         return index;
     }
 

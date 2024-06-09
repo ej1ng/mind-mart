@@ -8,7 +8,7 @@ public class Image {
     public BufferedImage getImage(String imagePath) {
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getClass().getResourceAsStream(imagePath));
+            image = ImageIO.read(getClass().getResource(imagePath));
             return image;
         } catch (IOException e) {
             e.printStackTrace();

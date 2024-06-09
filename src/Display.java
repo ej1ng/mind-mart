@@ -17,6 +17,9 @@ public class Display extends JPanel implements Runnable{
     public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
 
 
+    private int currency = 100; // intialize currency
+    private int price = 20; // initialize item price
+    private int correctPurchases = 0;
 
 
     Conditions conditions = new Conditions();

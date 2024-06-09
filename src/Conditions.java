@@ -46,4 +46,13 @@ public class Conditions {
         scenario = fileContent.toString();
         return scenario;
     }
+    /**
+     * returns the index value
+     * pre: none
+     * post: index returned
+     * @return index
+     */
+    public int getIndex() {
+        return index;
+    }
 }

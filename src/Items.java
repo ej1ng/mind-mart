@@ -23,6 +23,10 @@ public class Items extends Image {
     }
 
     public void show(Graphics2D g2) {
-        g2.drawImage(item,0,0,display.width,display.height,null);
+        BufferedImage img = item;
+
+        if (keyResp.displayed == true) {
+            g2.drawImage(img,0,0,display.width,display.height,null);
+        }
     }
 }

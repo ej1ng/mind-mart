@@ -99,16 +99,7 @@ public class Display extends JPanel implements Runnable{
             if (keyResp.displayed == true) {
                 item.show(g2);
             }
-
-
-
         }
-
         g2.dispose(); 
-
-
     }
-
-
-
 }

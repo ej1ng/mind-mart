@@ -8,8 +8,6 @@ public class Display extends JPanel implements Runnable{
     final int width =  1440;
     final int height = 810;
 
-    private int currentIntroSlide = 1;
-
     final int FPS = 60; 
     public int intro = 1;
     public int shop = 2;

@@ -3,7 +3,7 @@ import java.awt.event.*;
 public class KeyResponse implements KeyListener{
 
     Display display;
-    public boolean displayed;
+    public boolean displayed, displayedHint;
     public int pressedKey;
     public boolean checkedOut;
     public boolean nextPressed;
@@ -14,6 +14,7 @@ public class KeyResponse implements KeyListener{
     public KeyResponse(Display display) {
         this.display = display;
         displayed = false;
+        displayedHint = false;
     }
 
     public void keyTyped(KeyEvent e) {
@@ -204,9 +205,20 @@ public class KeyResponse implements KeyListener{
             }
 
             if (code == KeyEvent.VK_P) {
-                checkoutItem = pressedKey;
-                checkedOut = true; // currency deducted
+                if (displayedHint == false) {
+                    displayedHint = true;
+                    checkoutItem = pressedKey;  
+                    displayed = false;         
+                    checkedOut = true; // currency deducted         
+                }
             }
+            if (code == KeyEvent.VK_B) {
+                if (displayedHint == true) {
+                    displayedHint = false;
+                    displayed = false;
+                }
+            }
+
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = true;
             }

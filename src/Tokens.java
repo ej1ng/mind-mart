@@ -5,21 +5,21 @@ public class Tokens extends Image {
     private int currency;
     private int price;
     KeyResponse keyResp;
-    private int correctPurchases;
     Display display;
     private Font font = new Font("Arial",Font.PLAIN,20);
+    Answers ans;
 
     /**
      * constructor
      * pre: none
      * post: sets variables
      */
-    public Tokens(Display display, KeyResponse keyResp) {
+    public Tokens(Display display, KeyResponse keyResp, Answers ans) {
         this.keyResp = keyResp;
         this.display = display;
+        this.ans = ans;
         currency = 100; // intialize currency
         price = 20; // initialize item price
-        correctPurchases = 0;
     }
 
     /**
@@ -55,9 +55,8 @@ public class Tokens extends Image {
                 keyResp.checkedOut = false;
                 checkout(currency,price);
             }
-        } else if (currency == 0) {
+        } else if (currency == 0 || ans.count == 3) {
             if (keyResp.nextPressed == true) {
-                keyResp.nextPressed = false;
                 display.gameState = display.guess;
 
             }
@@ -76,7 +75,7 @@ public class Tokens extends Image {
         g2.drawString(String.valueOf(currency),x,y);
         
         if (currency == 0) {
-            g2.drawString("Press enter to guess the disorder",1030,750);
+            g2.drawString("Press enter to guess the disorder",1030,150);
             
             
             

@@ -1,12 +1,10 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class Items extends Image {
     KeyResponse keyResp;
     Display display;
     BufferedImage item;
-    BufferedImage correction;
 
     /**
      * constructor
@@ -22,9 +20,6 @@ public class Items extends Image {
     public void update() {
         if (keyResp.displayed == true) {
             item = getImage("resources/items/item" + keyResp.pressedKey + ".png");
-        }
-        if (keyResp.checkedOut == true) {
-            correction = getImage("resources/correction/correction.png"); // update later
         }
     }
 

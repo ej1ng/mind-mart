@@ -22,8 +22,10 @@ public class Display extends JPanel implements Runnable{
     Story story = new Story(this, keyResp);
     Conditions conditions = new Conditions(this);
     Items item = new Items(this, keyResp);
-    Tokens currency = new Tokens (this,keyResp);
+
     Guessing guessing = new Guessing(this,keyResp,conditions);
+    Answers ans = new Answers(keyResp, this, conditions);
+    Tokens currency = new Tokens (this,keyResp, ans);
 
 
     public Display() {
@@ -69,6 +71,7 @@ public class Display extends JPanel implements Runnable{
         if (gameState == shop) {
             item.update();
             currency.update();
+            ans.update();
         }
         if (gameState == guess) {
             guessing.update();
@@ -88,8 +91,9 @@ public class Display extends JPanel implements Runnable{
         if (gameState == shop) {
             conditions.showBg(g2); 
             conditions.showScenario(g2); // generate random scenario
-            currency.show(g2);
             item.show(g2);
+            ans.show(g2);
+            currency.show(g2);
 
         }
         if (gameState == guess) {

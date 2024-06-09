@@ -1,8 +1,14 @@
-public class Answers {
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class Answers extends Image {
     KeyResponse keyResp;
     Display display;
     Conditions generated;
+    BufferedImage screen;
     private boolean correct;
+    public int count;
+    
 
     int[][] arrayOfAnswers = { // 2d array
         {17,1,5}, // adhd
@@ -19,15 +25,17 @@ public class Answers {
         this.keyResp = keyResp;
         this.display = display;
         this.generated = generated;
+        correct = correctItem();
     }
     /**
      * returns boolean of either if item guessed for specific condition is correct or incorrect
      * pre: none
      * post: boolean returned
      */
-    public void correctItem() {
-        int condition = (generated.getIndex()) - 1;
+    public boolean correctItem() {
+        int condition = generated.getIndex();
         int userItem = keyResp.checkoutItem;
+
 
         // add all correct items to arraylist of specific condition
         if (condition >= 0 && condition < arrayOfAnswers.length) {
@@ -35,16 +43,29 @@ public class Answers {
             for (int j = 0; j < arrayOfAnswers[condition].length; j++) {
                 if (userItem == arrayOfAnswers[condition][j]) {
                     correct = true;
-                } else {
-                    correct = false;
+                    count++;
                 }
             }
         } else {
             System.out.println("Invalid row index.");
         }
+        return correct;
+    }
+    
+    public void update() {
+        if (correctItem()) {
+            screen = getImage("resources/correction/correction0.png");
+        } else {
+            screen = getImage("resources/correction/correction1.png");
+        }
     }
 
-    public void update() {
-        
+    public void show(Graphics2D g2) {
+        if (keyResp.displayedHint == true) {
+            g2.drawImage(screen,0,0,display.width,display.height,null);
+        }
+
+
     }
+
 }

@@ -1,48 +1,28 @@
 import java.io.*;
-import java.util.ArrayList;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
-public class Items {
-    private int currency;
-    private int price;
+public class Items extends Image {
     KeyResponse keyResp;
-    ArrayList<String> descriptionList = new ArrayList<>(); // arraylist of lines from text file
-    private int correctPurchases;
+    Display display;
+    BufferedImage item;
     /**
      * constructor
      * pre: none
-     * post: sets currency to 0
+     * post: sets keyResp and display
      */
-    public Items(int currency, KeyResponse keyResp, int price, int correctPurchases) {
-        this.currency = currency;
+    public Items(Display display, KeyResponse keyResp) {
         this.keyResp = keyResp;
-        this.price = price; // price of item
-        this.correctPurchases = correctPurchases;
+        this.display = display;
     }
-    /**
-     * get method returns currency
-     * pre: none
-     * post: currency updated and returned
-     */
-    public int getCurrency() {
-        return currency;
+
+    public void update() {
+        if (keyResp.displayed == true) {
+            item = getImage("resources/items/item" + keyResp.getPressedKey() + ".png");
+        }
     }
-    /**
-     * updates currency after purchase
-     * pre: none
-     * post: subtracts from currency value
-     */
-    public void purchase(int currency, int price) { // updates currency
-        this.currency -= price;
+
+    public void show(Graphics2D g2) {
+        g2.drawImage(item,0,0,display.width,display.height,null);
     }
-    /**
-     * updates the currency in this class from another class
-     * pre: none
-     * post: currency in this class is updated
-     */
-    public void setCurrency(int currency) {
-        currency = this.currency;
-    }
-    /**
-     * 
-     */
 }

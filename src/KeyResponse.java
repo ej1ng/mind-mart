@@ -33,6 +33,7 @@ public class KeyResponse implements KeyListener{
         if (display.gameState == display.shop) {
             if (code == KeyEvent.VK_1) {
                 if (displayed = false) {
+                    System.out.println("On");
                     displayed = true;
                     pressedKey = 0;
                 } else {

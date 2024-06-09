@@ -5,11 +5,12 @@ import javax.imageio.*;
 
 public class Image {
 
+    public BufferedImage img;
+
     public BufferedImage getImage(String imagePath) {
         BufferedImage image = null;
         try {
             image = ImageIO.read(getClass().getResourceAsStream(imagePath));
-            return image;
         } catch (IOException e) {
             e.printStackTrace();
         }

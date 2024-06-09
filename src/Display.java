@@ -11,10 +11,10 @@ public class Display extends JPanel implements Runnable{
     private int currentIntroSlide = 1;
 
     final int FPS = 60; 
-    public final int intro = 1;
-    public final int shop = 2;
-    public final int guess = 3;
-    public int gameState; // initialize to intro state cuz we're starting w/ the intro
+    public int intro = 1;
+    public int shop = 2;
+    public int guess = 3;
+    public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
 
 
 
@@ -31,7 +31,6 @@ public class Display extends JPanel implements Runnable{
         this.setOpaque(false);
         this.setDoubleBuffered(true);
         this.setFocusable(true);
-        gameState = intro;
     }
 
     public void startGameThread() {

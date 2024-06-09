@@ -201,15 +201,13 @@ public class KeyResponse implements KeyListener{
         if (display.gameState == display.intro) {
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = true;
+
             }
         }
 
         if (display.gameState == display.guess) {
 
         }
-
-
-
     }
 
     public int getPressedKey() {

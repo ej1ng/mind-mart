@@ -15,18 +15,18 @@ public class Story extends Image{
         this.display = display;
         this.keyResp = keyResp;
         slideNum = 1;
-        slide = getImage("resources/intro/intro" + slideNum + ".png");
+        slide = getImage("/resources/intro/intro" + slideNum + ".png");
     }
 
     public void update() {
-        if (keyResp.nextPressed == true) {
-            if (slideNum < 9)  {
+        if (slideNum < 9) {
+            if (keyResp.nextPressed == true) {
                 slideNum +=1;
-                slide = getImage("resources/intro/intro" + slideNum + ".png");
-                System.out.println(slideNum);
-            } else {
-                display.gameState = display.shop;
             }
+            System.out.println(keyResp.nextPressed);
+            slide = getImage("resources/intro/intro" + slideNum + ".png");
+        } else {
+            display.gameState = display.shop;
         }
     }
 

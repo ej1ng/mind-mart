@@ -1,6 +1,4 @@
 import java.awt.*;
-import java.util.Currency;
-
 import javax.swing.*;
 
 
@@ -94,8 +92,8 @@ public class Display extends JPanel implements Runnable{
             story.show(g2);
         }
         if (gameState == shop) {
-            conditions.showBg(g2);
-            conditions.showScenario(g2);
+            conditions.showBg(g2); 
+            conditions.showScenario(g2); // generate random scenario
             currency.show(g2);
             item.show(g2);
 

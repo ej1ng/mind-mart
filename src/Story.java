@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Story extends Image{
+public class Story extends Image {
 
     Display display;
     KeyResponse keyResp;
@@ -12,15 +12,22 @@ public class Story extends Image{
         this.display = display;
         this.keyResp = keyResp;
         slideNum = 1;
-        slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
-    }
+        slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png"); // default welcome screen
+    } 
 
     public void update() {
         if (slideNum < 9) {
             if (keyResp.nextPressed == true) {
                 keyResp.nextPressed = false;
-                slideNum +=1;
+                slideNum += 1;
                 slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
+                System.out.println(slideNum);
+            }
+        } else if (slideNum == 9) {
+            slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
+            if (keyResp.nextPressed == true) {
+                keyResp.nextPressed = false;
+                slideNum = Integer.MAX_VALUE;
             }
         } else {
             display.gameState = display.shop;

@@ -6,14 +6,14 @@ public class Conditions {
     private String scenario;
 
     // creates objects for all condition files
-    File adhd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/adhd.txt");
-    File anxiety = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/anxiety.txt");
-    File autism = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/autism.txt");
-    File bpd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/bpd.txt");
-    File depression = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/depression.txt");
-    File did = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/did.txt");
-    File ed = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ed.txt");
-    File ptsd = new File("/Users/emilyjing/Documents/code/jamhacks/mind-mart/src/conditions/ptsd.txt");
+    File adhd = new File("src/conditions/adhd.txt");
+    File anxiety = new File("src/conditions/anxiety.txt");
+    File autism = new File("src/conditions/autism.txt");
+    File bpd = new File("src/conditions/bpd.txt");
+    File depression = new File("src/conditions/depression.txt");
+    File did = new File("src/conditions/did.txt");
+    File ed = new File("src/conditions/ed.txt");
+    File ptsd = new File("src/conditions/ptsd.txt");
     
     private File[] conditionList = {adhd, anxiety, autism, bpd, depression, did, ed, ptsd}; // array of condition files
     /**

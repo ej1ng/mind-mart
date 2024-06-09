@@ -30,7 +30,7 @@ public class Display extends JPanel implements Runnable{
     Story story = new Story(this, keyResp);
     Conditions conditions = new Conditions(this);
     Items item = new Items(this, keyResp);
-    Tokens currency = new Tokens (total, keyResp, price, correctPurchases, this);
+    Tokens currency = new Tokens (this,keyResp);
 
 
     public Display() {
@@ -96,8 +96,9 @@ public class Display extends JPanel implements Runnable{
         if (gameState == shop) {
             conditions.showBg(g2);
             conditions.showScenario(g2);
-
+            currency.show(g2);
             item.show(g2);
+
         }
         g2.dispose(); 
     }

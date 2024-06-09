@@ -16,13 +16,14 @@ public class Tokens extends Image {
      * pre: none
      * post: sets variables
      */
-    public Tokens(int currency, KeyResponse keyResp, int price, int correctPurchases, Display display) {
-        this.currency = currency;
+    public Tokens(Display display, KeyResponse keyResp) {
         this.keyResp = keyResp;
         this.display = display;
-        this.price = price;
-        this.correctPurchases = correctPurchases;
+        currency = 100; // intialize currency
+        price = 20; // initialize item price
+        correctPurchases = 0;
     }
+
     /**
      * get method returns currency
      * pre: none
@@ -45,28 +46,28 @@ public class Tokens extends Image {
      * post: currency in this class is updated
      */
     public void setCurrency(int currency) {
-        currency = this.currency;
+        this.currency = currency;
     }
     /**
      * update method
      */
     public void update() {
-        System.out.println(currency); // before purchase for debug
-        // purchasing
-        checkout(currency, price);
-        setCurrency(currency);
-
-        System.out.println(currency); // after purchase for debug
+        if (keyResp.checkedOut == true && currency > 0) {
+            keyResp.checkedOut = false;
+            checkout(currency,price);
+        }
     }
+
     /**
      * update and display the currency
      */
-    public void showScenario(Graphics2D g2) { 
-        int x = 570;
-        int y = 585; 
+    public void show(Graphics2D g2) { 
+        int x = 200;
+        int y = 105; 
         Color c = new Color(139,69,19);
         g2.setFont(font);
         g2.setColor(c);
-
+        g2.drawString(String.valueOf(currency),x,y);
     }
+
 }

@@ -5,7 +5,6 @@ import javax.imageio.*;
 
 public class Image {
 
-    public BufferedImage img;
 
     public BufferedImage getImage(String imagePath) {
         BufferedImage image = null;

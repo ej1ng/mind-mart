@@ -14,7 +14,7 @@ public class Display extends JPanel implements Runnable{
     public int intro = 1;
     public int shop = 2;
     public int guess = 3;
-    public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
+    public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
 
 
 

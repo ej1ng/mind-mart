@@ -14,7 +14,7 @@ public class Display extends JPanel implements Runnable{
     public final int intro = 1;
     public final int shop = 2;
     public final int guess = 3;
-    public int gameState = intro; // initialize to intro state cuz we're starting w/ the intro
+    public int gameState; // initialize to intro state cuz we're starting w/ the intro
 
 
 
@@ -22,6 +22,7 @@ public class Display extends JPanel implements Runnable{
     Conditions conditions = new Conditions();
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
+    Story story = new Story(this, keyResp);
 
 
     public Display() {
@@ -30,19 +31,46 @@ public class Display extends JPanel implements Runnable{
         this.setOpaque(false);
         this.setDoubleBuffered(true);
         this.setFocusable(true);
+        gameState = intro;
     }
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
-    
+
     public void run() {
-        
+        double drawInterval = 1000000000/FPS;
+        double delta = 0;
+        long lastTime = System.nanoTime();
+        long currentTime;
+
+        while (gameThread != null) {
+            currentTime = System.nanoTime();
+            delta += (currentTime-lastTime)/drawInterval;
+
+            lastTime = currentTime;
+
+            if (delta >= 1) {
+                update();
+
+                repaint();
+
+                delta --;
+            }
+        }
     }
 
     public void update() {
-        
+        if (gameState == intro) {
+            story.update();
+        }
+        if (gameState == shop) {
+
+        }
+        if (gameState == guess) {
+
+        }
     }
     
     public void paintComponent(Graphics g) {
@@ -50,6 +78,9 @@ public class Display extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D)g;
 
+        if (gameState == intro) {
+            story.show(g2);
+        }
 
         g2.dispose(); 
 

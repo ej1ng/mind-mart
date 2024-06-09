@@ -29,6 +29,8 @@ class Main {
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        display.startGameThread();
         display.run();
 
     }

@@ -7,20 +7,14 @@ public class Image {
 
     public BufferedImage getImage(String imagePath) {
         BufferedImage image = null;
-
         try {
-            image = ImageIO.read(getClass().getResource(imagePath));
+            image = ImageIO.read(getClass().getResourceAsStream(imagePath));
             return image;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return image;
     }
 
-    public void displayImage(Graphics2D g2, BufferedImage image, int x, int y, int width, int height) {
-        g2.drawImage(image, x, y, width, height, null);
-    }
 
-    
 }

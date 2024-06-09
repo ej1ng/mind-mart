@@ -227,9 +227,13 @@ public class KeyResponse implements KeyListener{
 
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
-        if (code == KeyEvent.VK_ENTER) {
-            nextPressed = false;
+
+        if (display.gameState == display.intro) {
+            if (code == KeyEvent.VK_ENTER) {
+                nextPressed = false;
+            }
         }
+
         if (code == KeyEvent.VK_P) {
             checkedOut = false;
         }

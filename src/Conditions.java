@@ -98,13 +98,13 @@ public class Conditions extends Image {
 
     public void showScenario(Graphics2D g2) { 
         int x = 570;
-        int y = 590; 
+        int y = 585; 
         Color c = new Color(139,69,19);
         g2.setFont(font);
         g2.setColor(c);
         for (String line : getLineArray()) {
             g2.drawString(line,x,y);
-            y += 30;
+            y += 25;
         }
 
     }

@@ -15,6 +15,7 @@ public class Display extends JPanel implements Runnable{
     public int gameState = 1; // initialize to intro state cuz we're starting w/ the intro
 
 
+    // variable for the currency class
     private int currency = 100; // intialize currency
     private int price = 20; // initialize item price
     private int correctPurchases = 0;
@@ -23,8 +24,10 @@ public class Display extends JPanel implements Runnable{
     Conditions conditions = new Conditions(this);
     KeyResponse keyResp = new KeyResponse(this);
     Thread gameThread;
-    Story story = new Story(this, keyResp);
 
+    // create objects for game
+    Story story = new Story(this, keyResp);
+    Items item = new Items(this, keyResp);
 
     public Display() {
         this.setPreferredSize(new Dimension(width, height));
@@ -70,9 +73,10 @@ public class Display extends JPanel implements Runnable{
         }
         if (gameState == shop) {
 
+            item.update();
         }
         if (gameState == guess) {
-
+            
         }
     }
     
@@ -88,6 +92,10 @@ public class Display extends JPanel implements Runnable{
             conditions.showBg(g2);
             conditions.showScenario(g2);
             
+            if (keyResp.displayed == true) {
+                item.show(g2);
+            }
+
         }
 
         g2.dispose(); 

@@ -205,7 +205,7 @@ public class KeyResponse implements KeyListener{
 
             if (code == KeyEvent.VK_P) {
                 checkoutItem = pressedKey;
-                checkedOut = true;
+                checkedOut = true; // currency deducted
             }
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = true;

@@ -23,6 +23,13 @@ public class KeyResponse implements KeyListener{
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
 
+        if (display.gameState == display.intro) {
+            if (code == KeyEvent.VK_ENTER) {
+                nextPressed = true;
+
+            }
+        }
+        
         if (display.gameState == display.shop) {
             if (code == KeyEvent.VK_1) {
                 if (displayed = false) {
@@ -197,13 +204,6 @@ public class KeyResponse implements KeyListener{
                 checkedOut = true;
             }
         } 
-
-        if (display.gameState == display.intro) {
-            if (code == KeyEvent.VK_ENTER) {
-                nextPressed = true;
-
-            }
-        }
 
         if (display.gameState == display.guess) {
 

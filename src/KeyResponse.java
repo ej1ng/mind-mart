@@ -18,11 +18,12 @@ public class KeyResponse implements KeyListener{
 
     public void keyTyped(KeyEvent e) {
 
+
+
     }
 
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
-
         if (display.gameState == display.intro) {
 
             if (code == KeyEvent.VK_ENTER) {
@@ -30,7 +31,6 @@ public class KeyResponse implements KeyListener{
 
             }
         }
-        
         if (display.gameState == display.shop) {
             if (code == KeyEvent.VK_1) {
                 if (displayed = false) {

@@ -18,6 +18,7 @@ public class Story extends Image{
     public void update() {
         if (slideNum < 9) {
             if (keyResp.nextPressed == true) {
+                keyResp.nextPressed = false;
                 slideNum +=1;
                 slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
             }

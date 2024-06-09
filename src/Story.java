@@ -22,7 +22,6 @@ public class Story extends Image{
                 slideNum +=1;
                 slide = getImage("resources/intro/intro" + String.valueOf(slideNum) + ".png");
             }
-
         } else {
             display.gameState = display.shop;
         }

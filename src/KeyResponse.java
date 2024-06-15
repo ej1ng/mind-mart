@@ -1,15 +1,18 @@
 import java.awt.event.*;
 
-public class KeyResponse implements KeyListener{
+/**
+ * Implements KeyListener to handle keyboard input events.
+ * Manages responses to key presses for game interaction.
+ */
+public class KeyResponse implements KeyListener {
 
     Display display;
     public boolean displayed, displayedHint;
-    public int pressedKey;
+    public int pressedKey = 100;
     public boolean checkedOut;
     public boolean nextPressed;
-    public int checkoutItem;
+    public int checkoutItem = 100;
     public int guess = 0;
-
 
     public KeyResponse(Display display) {
         this.display = display;
@@ -18,8 +21,6 @@ public class KeyResponse implements KeyListener{
     }
 
     public void keyTyped(KeyEvent e) {
-
-
 
     }
 
@@ -35,14 +36,12 @@ public class KeyResponse implements KeyListener{
         if (display.gameState == display.shop) {
             if (code == KeyEvent.VK_1) {
                 if (displayed == false) {
-                    System.out.println(displayed);
                     displayed = true;
                     pressedKey = 0;
-                    System.out.println(displayed);
                 } else {
                     displayed = false;
                 }
-            } 
+            }
             if (code == KeyEvent.VK_2) {
                 if (displayed == false) {
                     displayed = true;
@@ -207,22 +206,23 @@ public class KeyResponse implements KeyListener{
             if (code == KeyEvent.VK_P) {
                 if (displayedHint == false) {
                     displayedHint = true;
-                    checkoutItem = pressedKey;  
-                    displayed = false;         
-                    checkedOut = true; // currency deducted         
+                    checkoutItem = pressedKey;
+                    displayed = false;
+                    checkedOut = true;
                 }
             }
             if (code == KeyEvent.VK_B) {
                 if (displayedHint == true) {
                     displayedHint = false;
                     displayed = false;
+                    nextPressed = false;
                 }
             }
 
             if (code == KeyEvent.VK_ENTER) {
                 nextPressed = true;
             }
-        } 
+        }
 
         if (display.gameState == display.guess) {
             if (code == KeyEvent.VK_1) {
@@ -249,11 +249,9 @@ public class KeyResponse implements KeyListener{
             if (code == KeyEvent.VK_8) {
                 guess = 8;
             }
-            
 
         }
     }
-
 
     public int getCheckoutItem() {
         if (checkedOut == true) {
@@ -263,27 +261,8 @@ public class KeyResponse implements KeyListener{
         return -1;
     }
 
-
     public void keyReleased(KeyEvent e) {
-        int code = e.getKeyCode();
-
-        if (display.gameState == display.intro) {
-            if (code == KeyEvent.VK_ENTER) {
-                nextPressed = false;
-            }
-            if (code == KeyEvent.VK_ENTER) {
-                nextPressed = false;
-            }
-        }
-
-
-        if (display.gameState == display.shop) {
-            if (code == KeyEvent.VK_P) {
-                checkedOut = false;
-            }
-
-        }
-
 
     }
+
 }

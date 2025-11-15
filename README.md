@@ -5,6 +5,7 @@ A Java-powered game that raises mental health awareness. Users are prompted to i
 ## How to run
 1. Clone this repo
 2. Have Java Runtime Environment (JRE) or Java Development Kit (JDK) installed
+   
     Install:
      `sudo apt install default-jdk # for JDK`
       `sudo apt install default-jre # for JRE`
@@ -12,4 +13,5 @@ A Java-powered game that raises mental health awareness. Users are prompted to i
      Check:
      `java -version`
      `javac -version`
-3. Click the Run button (▶️) in VS Code
+   
+4. Click the Run button (▶️) in VS Code
